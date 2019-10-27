@@ -91,13 +91,13 @@ class EditoraController extends Controller
         if(((Auth::user()->id) == $verify) && ($bibliotecas->id == $id)){
             if(!empty($request->buscar)){
                 if($request->filtro == 'nome'){
-                    $editoras->where('editoras.nome', 'LIKE',"%$request->buscar%");              
+                    $editoras->where('editoras.nome', 'ILIKE',"%$request->buscar%");              
                 }
                 if($request->filtro == 'cidade'){
-                    $editoras->where('editoras.cidade', 'LIKE',"%$request->buscar%");              
+                    $editoras->where('editoras.cidade', 'ILIKE',"%$request->buscar%");              
                 }
                 if($request->filtro == 'endereco'){
-                    $editoras->where('editoras.endereco', 'LIKE',"%$request->buscar%");              
+                    $editoras->where('editoras.endereco', 'ILIKE',"%$request->buscar%");              
                 }
             }
             $editoras = $editoras->paginate(4)->appends(request()->except('page'));

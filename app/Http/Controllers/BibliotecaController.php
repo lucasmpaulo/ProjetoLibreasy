@@ -81,7 +81,6 @@ class BibliotecaController extends Controller
         $user = Auth()->user();
         $verify = $biblioteca->user_id;
         $bibliotecas = Biblioteca::all();
-        // DB::enableQueryLog(); // Enable query log
         $livros = DB::table('livros')->select('livros.id', 'livros.isbn','livros.codigoLivro', 'livros.titulo', 'livros.biblioteca_id', 
         'livros.numeroCopias', 'categorias.nome', 'livros.numPagina', DB::raw("CONCAT(autores.nome,' ', autores.sobrenome) as nome_autor"))
         ->join('bibliotecas', 'bibliotecas.id', '=', 'livros.biblioteca_id')
@@ -89,7 +88,6 @@ class BibliotecaController extends Controller
         ->join('categorias', 'categorias.id', '=', 'livros.categoria_id')
         ->where('livros.biblioteca_id', '=', $id);
         $livros = $livros->paginate(4);
-        // dd(DB::getQueryLog()); // Show results of log
         if(($user->id) == $verify){
             return view('biblioteca.mostrarbiblioteca', compact('bibliotecas','id', 'livros' ,'verify', 'locacao'));
         }
@@ -113,22 +111,22 @@ class BibliotecaController extends Controller
         if(((Auth::user()->id) == $verify) && ($bibliotecas->id == $id)){
             if(!empty($request->buscar)){
                 if($request->filtro == 'titulo'){
-                    $livros->where('titulo','LIKE', "%$request->buscar%");
+                    $livros->where('titulo','ILIKE', "%$request->buscar%");
                 }
                 if($request->filtro == 'isbn'){
-                    $livros->where('isbn','LIKE', "%$request->buscar%");
+                    $livros->where('isbn','ILIKE', "%$request->buscar%");
                 }
                 if($request->filtro == 'codigo'){
-                    $livros->where('codigoLivro','LIKE', "%$request->buscar%");
+                    $livros->where('codigoLivro','ILIKE', "%$request->buscar%");
                 }
                 if($request->filtro == 'categorias'){
-                    $livros->where('categorias.nome', 'LIKE', "%$request->buscar%");
+                    $livros->where('categorias.nome', 'ILIKE', "%$request->buscar%");
                 }
                 if($request->filtro == 'nomeautores'){
-                    $livros->where('autores.nome', 'LIKE',"%$request->buscar%");              
+                    $livros->where('autores.nome', 'ILIKE',"%$request->buscar%");              
                 }
                 if($request->filtro == 'sobrenomeautores'){
-                    $livros->where('autores.sobrenome', 'LIKE',"%$request->buscar%");              
+                    $livros->where('autores.sobrenome', 'ILIKE',"%$request->buscar%");              
                 }
             }
             $livros = $livros->paginate(4)->appends(request()->except('page'));

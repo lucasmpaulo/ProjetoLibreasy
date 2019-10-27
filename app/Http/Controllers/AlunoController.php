@@ -86,13 +86,13 @@ class AlunoController extends Controller
         if(((Auth::user()->id) == $verify) && ($bibliotecas->id == $id)){
             if(!empty($request->buscar)){
                 if($request->filtro == 'nome_aluno'){
-                    $alunos->where('alunos.nome_aluno', 'LIKE',"%$request->buscar%");            
+                    $alunos->where('alunos.nome_aluno', 'ILIKE',"%$request->buscar%");            
                 }
                 if($request->filtro == 'sobrenome_aluno'){
-                    $alunos->where('alunos.sobrenome_aluno', 'LIKE',"%$request->buscar%");              
+                    $alunos->where('alunos.sobrenome_aluno', 'ILIKE',"%$request->buscar%");              
                 }
                 if($request->filtro == 'email_aluno'){
-                    $alunos->where('alunos.email_aluno', 'LIKE',"%$request->buscar%");              
+                    $alunos->where('alunos.email_aluno', 'ILIKE',"%$request->buscar%");              
                 }
             } 
                 $alunos = $alunos->paginate(4)->appends(request()->except('page'));

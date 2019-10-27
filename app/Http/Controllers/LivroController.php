@@ -167,22 +167,22 @@ class LivroController extends Controller
         if(((Auth::user()->id) == $verify) && ($bibliotecas->id == $id)){
             if(!empty($request->buscar)){
                 if($request->filtro == 'titulo'){
-                    $livros->where('titulo','LIKE', "%$request->buscar%");
+                    $livros->where('titulo','ILIKE', "%$request->buscar%");
                 }
                 if($request->filtro == 'isbn'){
-                    $livros->where('isbn','LIKE', "%$request->buscar%");
+                    $livros->where('isbn','ILIKE', "%$request->buscar%");
                 }
                 if($request->filtro == 'codigo'){
-                    $livros->where('codigoLivro','LIKE', "%$request->buscar%");
+                    $livros->where('codigoLivro','ILIKE', "%$request->buscar%");
                 }
                 if($request->filtro == 'categorias'){
-                    $livros->where('categorias.nome', 'LIKE', "%$request->buscar%");
+                    $livros->where('categorias.nome', 'ILIKE', "%$request->buscar%");
                 }
                 if($request->filtro == 'nomeautores'){
-                    $livros->where('autores.nome', 'LIKE',"%$request->buscar%");              
+                    $livros->where('autores.nome', 'ILIKE',"%$request->buscar%");              
                 }
                 if($request->filtro == 'sobrenomeautores'){
-                    $livros->where('autores.sobrenome', 'LIKE',"%$request->buscar%");              
+                    $livros->where('autores.sobrenome', 'ILIKE',"%$request->buscar%");              
                 }
             }
             $livros = $livros->paginate(4)->appends(request()->except('page'));

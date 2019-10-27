@@ -93,18 +93,18 @@ class AutorController extends Controller
         $id = $bibliotecas->id;
         $verify = $bibliotecas->user_id;
         $data = $request->all();
-        $autores = DB::table('autores')->select('autores.id', 'autores.nome', 'autores.sobrenome','autores.pais', 'autores.descricao', 'autores.anonascimento', 
-        'autores.anomorte')
+        $autores = DB::table('autores')->select('autores.id', 'autores.nome', 'autores.sobrenome','autores.pais', 'autores.descricao', 
+        'autores.anonascimento', 'autores.anomorte')
         ->join('bibliotecas', 'bibliotecas.id', '=', 'autores.biblioteca_id')
         ->where('autores.biblioteca_id', '=', $id);
         
         if(((Auth::user()->id) == $verify) && ($bibliotecas->id == $id)){
             if(!empty($request->buscar)){
                 if($request->filtro == 'nomeautores'){
-                    $autores->where('autores.nome', 'LIKE',"%$request->buscar%");              
+                    $autores->where('autores.nome', 'ILIKE',"%$request->buscar%");              
                 }
                 if($request->filtro == 'sobrenomeautores'){
-                    $autores->where('autores.sobrenome', 'LIKE',"%$request->buscar%");              
+                    $autores->where('autores.sobrenome', 'ILIKE',"%$request->buscar%");              
                 }
             } 
                 $autores = $autores->paginate(4)->appends(request()->except('page'));
