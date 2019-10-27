@@ -28,8 +28,8 @@
                             <p>Código da Cópia: <span>{{ $c->codigoCopia }}</span></p>
                             <p>Título do Livro: <span>{{ $c->livro->titulo }}</span></p>
                             <p>ISBN do Livro: <span>{{ $c->livro->isbn }}</span></p>
-                            <p>Status: <span @if ($c->status->status_atual == 'Disponível') class="text-success" @endif
-                                @if ($c->status->status_atual == 'Indisponível') class="text-danger" @endif>{{ $c->status->status_atual }}</span></p>                            
+                            <p>Status: <span @if ($c->status->id == 1) class="text-success" @endif
+                                @if ($c->status->id == 2) class="text-danger" @endif>{{ $c->status->status_atual }}</span></p>                            
                             {{-- 
                             <div style="width:100%;">
                                 <p>Código de Barras: <span>{{ $c->barcode }}<img src="data:image/png;base64, {{ base64_encode($barcode)}}"></span></p>
