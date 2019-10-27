@@ -35,7 +35,7 @@ class LocacaoController extends Controller
     public function novo($id, Copia $copia)
     {
         $bibliotecas = Biblioteca::find($id);
-        $lista = Copia::find($copia);
+        $lista = Copia::find($copia->id);
         $status = Status::all();
         $livro = $bibliotecas->livro;
         $alunos = $bibliotecas->aluno;
