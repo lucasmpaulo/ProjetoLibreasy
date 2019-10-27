@@ -24,7 +24,7 @@ class LocacaoController extends Controller
         $verify = $bibliotecas->user_id;
         $livros = $bibliotecas->livro;
         $copia = $livros->copia;
-        $lista = Copia::find($copia);
+        $lista = Copia::find($copia->id);
         $locacao = $bibliotecas->locacao;
         if ((Auth::user()->id) == $verify) {
             return view('locacao.locacao', compact('id', 'verify', 'lista', 'copia', 'locacao'));
