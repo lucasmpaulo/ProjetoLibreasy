@@ -81,12 +81,12 @@ class BibliotecaController extends Controller
         $user = Auth()->user();
         $verify = $biblioteca->user_id;
         $bibliotecas = Biblioteca::all();
-        $livros = DB::table('livros')->select('livros.id', 'livros.isbn','livros.codigoLivro', 'livros.titulo', 'livros.biblioteca_id', 
-        'livros.numeroCopias', 'categorias.nome', 'livros.numPagina', DB::raw('CONCAT(autores.nome, " ", autores.sobrenome) as nomeAutor'))
+        $livros = DB::table('livros')->select('livros.id', 'livros.isbn','livros.codigoLivro', 'livros.titulo', 'livros.biblioteca_id','livros.numeroCopias', 'categorias.nome', 
+        'livros.numPagina', DB::raw('CONCAT(autores.nome, " ", autores.sobrenome) as nomeAutor'))
         ->join('bibliotecas', 'bibliotecas.id', '=', 'livros.biblioteca_id')
         ->join('autores', 'autores.id', '=', 'livros.autor_id')
         ->join('categorias', 'categorias.id', '=', 'livros.categoria_id')
-        ->where('livros.biblioteca_id', '=', $id);
+        ->where('livros.biblioteca_id', '=','bibliotecas.id');
         $livros = $livros->paginate(4);
         if(($user->id) == $verify){
             return view('biblioteca.mostrarbiblioteca', compact('bibliotecas','id', 'livros' ,'verify', 'locacao'));
