@@ -41,9 +41,9 @@
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     {{-- <a href="{{ route('editar.copia', ['id' => $id, 'livros' => $c->livro->id, 'copia' => $c->id])}}" class="dropdown-item">Editar</a> --}}
-                                    @if($c->status->status_atual == 'Disponível')
+                                    @if($c->status->id == 1)
                                         <a href="{{route ('nova.locacao',['id' => $id, 'copia' => $c->id])}}" class="dropdown-item">Locar Cópia</a>
-                                    @elseif($c->status->status_atual == 'Indisponível')
+                                    @elseif($c->status->id == 2)
                                         <a href="{{ route ('devolver.locacao', ['id' => $id, 'copia' => $c->id])}}"
                                             onclick="event.preventDefault(); document.getElementById('devolver-form').submit(); 
                                             return confirm('Deseja Confirmar a Devolução?')" class="dropdown-item">Devolver Cópia
