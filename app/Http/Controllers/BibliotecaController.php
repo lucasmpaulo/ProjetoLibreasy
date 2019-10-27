@@ -83,7 +83,7 @@ class BibliotecaController extends Controller
         $bibliotecas = Biblioteca::all();
         // DB::enableQueryLog(); // Enable query log
         $livros = DB::table('livros')->select('livros.id', 'livros.isbn','livros.codigoLivro', 'livros.titulo', 'livros.biblioteca_id', 
-        'livros.numeroCopias', 'categorias.nome', 'livros.numPagina', DB::raw("CONCAT(autores.nome,' ', autores.sobrenome) as nomeAutor"))
+        'livros.numeroCopias', 'categorias.nome', 'livros.numPagina', DB::raw("CONCAT(autores.nome,' ', autores.sobrenome) as nome_autor"))
         ->join('bibliotecas', 'bibliotecas.id', '=', 'livros.biblioteca_id')
         ->join('autores', 'autores.id', '=', 'livros.autor_id')
         ->join('categorias', 'categorias.id', '=', 'livros.categoria_id')
