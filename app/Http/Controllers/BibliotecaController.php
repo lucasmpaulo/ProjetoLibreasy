@@ -101,13 +101,13 @@ class BibliotecaController extends Controller
         $verify = $bibliotecas->user_id;
         // $livros = $bibliotecas->livro()->paginate(2)->appends(request()->except('page'));
         $data = $request->all();
-        $livros = DB::table('livros')->select('livros.id', 'livros.isbn','livros.codigoLivro', 'livros.titulo', 
-        'livros.numeroCopias', 'categorias.nome', 'livros.numPagina', DB::raw('CONCAT(autores.nome, " ", autores.sobrenome) as nomeAutor'))
+        $livros = DB::table('livros')->select('livros.id', 'livros.isbn','livros.codigoLivro', 'livros.titulo', 'livros.biblioteca_id', 
+        'livros.numeroCopias', 'categorias.nome', 'livros.numPagina', DB::raw("CONCAT(autores.nome,' ', autores.sobrenome) as nome_autor"))
         ->join('bibliotecas', 'bibliotecas.id', '=', 'livros.biblioteca_id')
         ->join('autores', 'autores.id', '=', 'livros.autor_id')
         ->join('categorias', 'categorias.id', '=', 'livros.categoria_id')
         ->where('livros.biblioteca_id', '=', $id);
-        
+                
         if(((Auth::user()->id) == $verify) && ($bibliotecas->id == $id)){
             if(!empty($request->buscar)){
                 if($request->filtro == 'titulo'){
