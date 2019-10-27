@@ -66,7 +66,7 @@
                         <p>ISBN: <span>{{ $l->isbn }}</span></p>
                         <p>Código do Livro: <span>{{ $l->codigoLivro }}</span></p>
                         <p>Titulo: <span>{{ $l->titulo }}</span></p>
-                        <p>Autor: <span>{{ $l->nomeAutor }}</span></p>
+                        {{-- <p>Autor: <span>{{ $l->nomeAutor }}</span></p> --}}
                         {{-- <p>Status: <span 
                             @if ($l->status_atual == 'Disponível') class="text-success" @endif
                             @if ($l->status_atual == 'Indisponível') class="text-danger" @endif>
