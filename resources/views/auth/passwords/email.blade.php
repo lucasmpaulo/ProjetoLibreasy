@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="tabela-custom">
-                <div class="divisor-cabecalho header-custom">
+                <div class="divisor-cabecalho header-custom m-t-md">
                     <h3 class="text-center p-t-md">{{ __('Resetar Senha') }}</h3>
                 </div>
 
