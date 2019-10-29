@@ -47,7 +47,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="email_aluno" class="col-md-4 col-form-label text-md-right">{{ __('E-mail Aluno') }}</label>
                             <div class="col-md-3">
                                 <input style="text-transform:none;" id="email_aluno" type="email" class="form-control @error('email_aluno') is-invalid @enderror" name="email_aluno" value="{{ $lista->email_aluno }}" required autocomplete="email_aluno" autofocus>
@@ -57,7 +57,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         <input type="hidden" name="biblioteca_id" id="biblioteca_id" value="{{$id}}">
 

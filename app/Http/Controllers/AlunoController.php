@@ -67,7 +67,7 @@ class AlunoController extends Controller
         $aluno->nome_aluno = $request->input('nome_aluno');
         $aluno->sobrenome_aluno = $request->input('sobrenome_aluno');
         $aluno->telefone_aluno = $request->input('telefone_aluno');
-        $aluno->email_aluno = $request->input('email_aluno');
+        // $aluno->email_aluno = $request->input('email_aluno');
         $aluno->save();
         return Redirect::route('lista.alunos', array('id' =>$id))->with('success','O(A) Aluno(a) Foi Atualizado(a) com Sucesso');
     }

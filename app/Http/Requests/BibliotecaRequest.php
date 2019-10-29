@@ -24,7 +24,8 @@ class BibliotecaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nomeBiblioteca' => 'required|unique:bibliotecas,nome|max:255',
+            // 'nomeBiblioteca' => 'required|unique:bibliotecas,nome|max:255',
+            'nomeBiblioteca' => 'required|max:255',
             'nomePaisBiblioteca' => 'required|max:255',
         ];
     }
