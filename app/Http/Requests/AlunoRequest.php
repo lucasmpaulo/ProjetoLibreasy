@@ -24,7 +24,7 @@ class AlunoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome_aluno' => 'required|max:30|regex:/^[a-zA-Zà-úÀ-Ú-9]+$/u]+$/u',
+            'nome_aluno' => 'required|max:30|regex:/^[a-zA-Zà-úÀ-Ú-9]+$/u',
             'sobrenome_aluno' => 'required|max:50|regex:/^[a-zA-Zà-úÀ-Ú-9]+$/u',
             'telefone_aluno' => 'required',
             'email_aluno' => 'required|unique:alunos,email_aluno|email|max:255',
