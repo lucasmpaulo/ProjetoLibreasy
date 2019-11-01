@@ -56,7 +56,6 @@
                                 <a href="{{ route('lista.categorias', ['id' => $id])}}" class="dropdown-item">Classificação</a>
                                 <a href="{{ route('lista.livros', ['id' => $id])}}" class="dropdown-item">Catálogo de Livros</a>
                                 {{-- <a href="{{ route('lista.editoras', ['id' => $id])}}" class="dropdown-item">Editora</a> --}}
-                                <a href="{{ route('lista.livros', ['id' => $id])}}" class="dropdown-item">Catálogo de Livros</a>
                                 <a href="{{ route('lista.autores', ['id' => $id])}}" class="dropdown-item">Autores</a>
                                 <a href="{{ route('lista.editoras', ['id' => $id])}}" class="dropdown-item">Editora</a>
                             </div>
