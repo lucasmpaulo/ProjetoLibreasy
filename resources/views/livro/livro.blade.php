@@ -21,6 +21,7 @@
                         </div>
                     @endif
                 </div>
+                
                 <form action="{{ route('pesquisar', ['id' => $id]) }}" method="GET">
                 <div class="card-body divisor-cabecalho">
                     <div class="card-body form form-inline d-flex justify-content-center">
@@ -42,9 +43,7 @@
                                 </span>
                             </div>  
                         </form>  
-                    </div>
-                </div>
-                    
+                                            
                 <div class="container ">
                     <div class="row justify-content-center mb-3">
                     @foreach($livros as $l)

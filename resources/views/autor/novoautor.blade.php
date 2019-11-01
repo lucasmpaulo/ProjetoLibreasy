@@ -12,7 +12,7 @@
                     <form method="POST" action="{{ route('criar.autor', ['id' => Request::route('id')])}}">
                         @csrf
                         <div class="form-group row">
-                            <label for="nomeAutor" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                            <label for="nomeAutor" class="col-md-4 col-form-label text-md-right">{{ __('Nome do Autor') }}</label>
                             <div class="col-md-6">
                                 <input id="nomeAutor" type="text" class="form-control @error('nomeAutor') is-invalid @enderror" name="nomeAutor" value="{{ old('nomeAutor') }}" required autocomplete="nomeAutor" autofocus>
                                 @error('nomeAutor')
@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="sobrenomeAutor" class="col-md-4 col-form-label text-md-right">{{ __('Sobrenome') }}</label>
+                            <label for="sobrenomeAutor" class="col-md-4 col-form-label text-md-right">{{ __('Sobrenome do Autor') }}</label>
                             <div class="col-md-6">
                                 <input id="sobrenomeAutor" type="text" class="form-control @error('sobrenomeAutor') is-invalid @enderror" name="sobrenomeAutor" value="{{ old('sobrenomeAutor') }}" required autocomplete="sobrenomeAutor">
                                 @error('sobrenomeAutor')
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="paisAutor" class="col-md-4 col-form-label text-md-right">{{ __('País ') }}</label>
+                            <label for="paisAutor" class="col-md-4 col-form-label text-md-right">{{ __('País') }}</label>
                             <div class="col-md-6">
                                 <input id="paisAutor" type="text" class="form-control @error('paisAutor') is-invalid @enderror" name="paisAutor" value="{{ old('paisAutor') }}" required autocomplete="paisAutor">
                                 @error('paisAutor')

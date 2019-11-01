@@ -12,7 +12,7 @@
                     <form method="POST" action="{{ route('criar.categoria', ['id' => Request::route('id')])}}">
                         @csrf
                         <div class="form-group row mr-4">
-                            <label for="nomeCategoria" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                            <label for="nomeCategoria" class="col-md-4 col-form-label text-md-right">{{ __('Nome da Classificação') }}</label>
                             <div class="col-md-6">
                                 <input id="nomeCategoria" type="text" class="form-control @error('nomeCategoria') is-invalid @enderror" name="nomeCategoria" value="{{ old('nomeCategoria') }}" placeholder="Ex..: Romance, Terror.." required autofocus>
                                 @error('nomeCategoria')
