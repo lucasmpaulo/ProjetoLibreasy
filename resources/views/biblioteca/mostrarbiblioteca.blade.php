@@ -56,18 +56,11 @@
                                 <a href="{{ route('lista.categorias', ['id' => $id])}}" class="dropdown-item">Classificação</a>
                                 <a href="{{ route('lista.livros', ['id' => $id])}}" class="dropdown-item">Catálogo de Livros</a>
                                 {{-- <a href="{{ route('lista.editoras', ['id' => $id])}}" class="dropdown-item">Editora</a> --}}
-                            </div>
-                        </td>
-                        <td>
-                            <button class="btn btn-form dropdown-toggle ml-4" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Catalogação
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <a href="{{ route('lista.livros', ['id' => $id])}}" class="dropdown-item">Catálogo de Livros</a>
                                 <a href="{{ route('lista.autores', ['id' => $id])}}" class="dropdown-item">Autores</a>
                                 <a href="{{ route('lista.editoras', ['id' => $id])}}" class="dropdown-item">Editora</a>
                             </div>
-                        </td>       
+                        </td>     
                     </div>
                 </div>
                 <div class="row justify-content-center pb-4 mb-4">
@@ -85,7 +78,7 @@
                         <p>N° de Cópias:<span> {{$l->numeroCopias}}</span>
                             <a href="{{ route('lista.copias', ['id' => $id, 'livros' => $l->id])}}" class="btn-form btn-sm ml-2">Cópias</a>
                         </p>
-                        <p>Nome Categoria: <span>{{ $l->nome }}</span></p>
+                        <p>Classificação: <span>{{ $l->nome }}</span></p>
                         @if((Auth::user()->id) == $verify)
                         <div class="text-right  align-middle m-t-md">
                             <button class="btn btn-form btn-align mb-3 dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
