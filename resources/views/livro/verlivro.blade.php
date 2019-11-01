@@ -43,7 +43,7 @@
                             {{-- <p>Nome do(a) Autor(a): <span style="text-transform:capitalize;">{{ $lista->autores->nome }} {{$lista->autores->sobrenome}}</span></p> --}}
                             <p>
                                 Nome da Editora: <span class="mr-4">{{ $lista->editora->nome}}</span>
-                                Nome Categoria: <span>{{ $lista->categoria->nome }}</span>
+                                Classificação: <span>{{ $lista->categoria->nome }}</span>
                             </p>
                             {{-- <p>Nome Categoria: <span>{{ $lista->categoria->nome }}</span></p> --}}
                             {{-- <p>Num. Páginas: <span>{{ $lista->numPagina }}</span></p> --}}

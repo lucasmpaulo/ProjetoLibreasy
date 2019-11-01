@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="tabela-custom fonte-form m-t-md">
                 <div class="divisor-cabecalho header-custom text-center">
-                    <h3 class="text-center p-t-md">{{ __('Cadastro de Categorias') }}</h3>
+                    <h3 class="text-center p-t-md">{{ __('Cadastro de Classificação') }}</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('criar.categoria', ['id' => Request::route('id')])}}">

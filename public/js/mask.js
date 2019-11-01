@@ -24,9 +24,9 @@ $(document).ready(function(){
           $(this).val(this.value.replace(sobrenome_aluno,''));
         }
     });
-    $('#telefone_aluno').mask('(00)0000-0000');
-    $('#telephone').mask('(00)0000-0000');
-    $('#telefoneEditora').mask('(00)0000-0000');
+    $('#telefone_aluno').mask('(00)00000-0000');
+    $('#telephone').mask('(00)00000-0000');
+    $('#telefoneEditora').mask('(00)00000-0000');
     $('#anoMorte').mask('0000');
     $('#anoNascimento').mask('0000');
     $('#anolivro').mask('0000');

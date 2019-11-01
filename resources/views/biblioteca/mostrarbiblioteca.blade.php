@@ -48,16 +48,26 @@
                             Acessar
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <a href="{{ route('lista.autores', ['id' => $id])}}" class="dropdown-item">Autores</a>
+                                {{-- <a href="{{ route('lista.autores', ['id' => $id])}}" class="dropdown-item">Autores</a> --}}
                                 <a href="{{ route('lista.alunos', ['id' => $id])}}" class="dropdown-item">Alunos</a>
                             {{-- @if(count($locacao) >  0)   
                                 <a href="{{ route('lista.locacao', ['id' => $id])}}" class="dropdown-item">Locações</a>
                             @endif --}}
-                                <a href="{{ route('lista.categorias', ['id' => $id])}}" class="dropdown-item">Categorias</a>
+                                <a href="{{ route('lista.categorias', ['id' => $id])}}" class="dropdown-item">Classificação</a>
                                 <a href="{{ route('lista.livros', ['id' => $id])}}" class="dropdown-item">Catálogo de Livros</a>
+                                {{-- <a href="{{ route('lista.editoras', ['id' => $id])}}" class="dropdown-item">Editora</a> --}}
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-form dropdown-toggle ml-4" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Catalogação
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <a href="{{ route('lista.livros', ['id' => $id])}}" class="dropdown-item">Catálogo de Livros</a>
+                                <a href="{{ route('lista.autores', ['id' => $id])}}" class="dropdown-item">Autores</a>
                                 <a href="{{ route('lista.editoras', ['id' => $id])}}" class="dropdown-item">Editora</a>
                             </div>
-                        </td>    
+                        </td>       
                     </div>
                 </div>
                 <div class="row justify-content-center pb-4 mb-4">

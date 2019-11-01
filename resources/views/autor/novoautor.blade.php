@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="tabela-custom fonte-form">
                 <div class="divisor-cabecalho header-custom text-center">
-                    <h3 class="text-center mt-4 p-t-md">{{ __('Cadastro de Autores') }}</h3>
+                    <h3 class="text-center mt-4 p-t-md">{{ __('Catalogação de Autores') }}</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('criar.autor', ['id' => Request::route('id')])}}">

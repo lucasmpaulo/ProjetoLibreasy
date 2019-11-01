@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="tabela-custom fonte-form">
                 <div class="divisor-cabecalho header-custom">
-                    <h3 class="text-center mt-4 p-t-md">Categorias Cadastradas</h3>
+                    <h3 class="text-center mt-4 p-t-md">Classificações Cadastradas</h3>
                 </div> 
                 <div class="card-body">
                     @if(count($categorias) >  0)
@@ -46,7 +46,7 @@
                 </div>
                 @else
                 <div class="naoCadastrado">
-                    <h2>Nenhuma Categoria Cadastrada</h2> 
+                    <h2>Nenhuma Classificação Cadastrada</h2> 
                 </div>
                 @endif 
                 <div>

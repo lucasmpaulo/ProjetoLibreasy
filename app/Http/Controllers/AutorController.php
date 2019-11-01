@@ -54,7 +54,7 @@ class AutorController extends Controller
         $autor->biblioteca_id = $id;
         $autor->user_id = $user->id;
         $autor->save();
-        return Redirect::route('lista.autores', array('id' =>$id))->with('success','O(A) Autor(a) Foi Inserido(a) com Sucesso');
+        return Redirect::route('lista.autores', array('id' =>$id))->with('success','Catalogação registrada com sucesso');
     }
 
     public function editar($id, Autor $autor){
@@ -81,9 +81,9 @@ class AutorController extends Controller
             $autor->anonascimento = $request->input('anoNascimento');
             $autor->anomorte = $request->input('anoMorte');
             $autor->save();
-            return Redirect::route('lista.autores', array('id' => $biblioteca))->with('success','O(A) Autor(a) Foi Atualizado(a) com Sucesso');
+            return Redirect::route('lista.autores', array('id' => $biblioteca))->with('success','Informação Atualizada com Sucesso');
         } else {
-            return Redirect::route('lista.autores', array('id' =>$autor->biblioteca))->with('error','O(A) Autor(a) Não Foi Atualizado(a) com Sucesso');
+            return Redirect::route('lista.autores', array('id' =>$autor->biblioteca))->with('error','Informação Não Atualizada com Sucesso');
         }
     }
 

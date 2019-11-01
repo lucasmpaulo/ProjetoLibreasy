@@ -27,7 +27,7 @@
                         <div class="input-group col-md-3">
                             <select class="custom-select" name="filtro" id="filtro" value="{{old('filtro')}}">
                                 <option selected>Selecionar Filtro</option>
-                                <option value="categorias">Categorias</option>
+                                <option value="categorias">Classificação</option>
                                 <option value="titulo">Título do Livro</option>
                                 <option value="isbn">ISBN</option>
                                 <option value="codigo">Código Livro</option>
@@ -53,7 +53,7 @@
                             <p>ISBN: <span>{{ $l->isbn }}</span></p>
                             <p>Código do Livro: <span>{{ $l->codigoLivro }}</span></p>
                             <p>Titulo: <span>{{ $l->titulo }}</span></p>
-                            <p>Categoria: <span>{{ $l->categoria->nome }}</span></p>
+                            <p>Classificação: <span>{{ $l->categoria->nome }}</span></p>
                             {{-- <p>Status: <span 
                                 @if ($l->status->status_atual == 'Disponível') class="text-success" @endif
                                 @if ($l->status->status_atual == 'Indisponível') class="text-danger" @endif>

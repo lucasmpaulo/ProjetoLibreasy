@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="tabela-custom fonte-form">
                 <div class="divisor-cabecalho header-custom text-center">
-                    <h3 class="text-center mt-2 p-t-md">{{ __('Cadastro de Livros') }}</h3>
+                    <h3 class="text-center mt-2 p-t-md">{{ __('Catalogação de Livros') }}</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('criar.livro', ['id' => Request::route('id')])}}">
@@ -126,7 +126,7 @@
                         </div> --}}
 
                         <div class="form-group row">
-                            <label for="categoria_id" class="col-md-4 col-form-label text-md-right"> Categoria </label>
+                            <label for="categoria_id" class="col-md-4 col-form-label text-md-right"> Classificação </label>
                             <div class="col-md-3">
                                 <select name="categoria_id" class="form-control input-md @error('categoria_id') is-invalid @enderror">
                                     @foreach($categorias as $c)
@@ -140,7 +140,7 @@
                                 @enderror
                             </div>
                             <div class="col-md-3">
-                                <a href="{{route('nova.categoria', ['id' =>$id])}}" class="btn btn-clear mr-2" target="_blank">Cadast. Categoria</a>
+                                <a href="{{route('nova.categoria', ['id' =>$id])}}" class="btn btn-clear mr-2" target="_blank">Cadast. Classificação</a>
                             </div>
                         </div>
 

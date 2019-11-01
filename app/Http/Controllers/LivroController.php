@@ -106,7 +106,7 @@ class LivroController extends Controller
                 return Redirect::route('lista.livros', array('id' =>$id))->with('success','Livro Inserido com Sucesso');
             }
         } catch ( Exception $e) {
-            return Redirect::route('lista.livros', array('id' => $id))->with('error', 'Não foi possível efetuar o cadastro');
+            return Redirect::route('lista.livros', array('id' => $id))->with('error', 'Não foi possível efetuar o registro');
         }
     }
 
@@ -145,8 +145,7 @@ class LivroController extends Controller
             $livro->categoria_id = $request->input('categoria_id');
             $livro->save();
         }  
-        return Redirect::route('lista.bibliotecas', array('id' =>$id))->with('success','O Livro Atualizado com Sucesso');
-        
+        return Redirect::route('lista.bibliotecas', array('id' =>$id))->with('success','Informação Atualizada com Sucesso');
     }
     
     public function pesquisar($id, Request $request)

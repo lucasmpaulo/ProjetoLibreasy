@@ -51,7 +51,7 @@ class CategoriaController extends Controller
         $categoria->biblioteca_id = $id;
         $categoria->user_id = $user->id;
         $categoria->save();
-        return Redirect::route('lista.categorias', array('id' => $id))->with('success', 'Categoria Cadastrada com Sucesso');
+        return Redirect::route('lista.categorias', array('id' => $id))->with('success', 'Classificação Cadastrada com Sucesso');
     }
 
     public function apagar($id, Categoria $categoria) {
@@ -59,9 +59,9 @@ class CategoriaController extends Controller
         $categorias = $categoria->id;
         try{
             $categoria->delete();
-            return Redirect::route('lista.categorias', ['id' => $id, 'categoria' => $categorias])->with('success', 'Categoria Excluída com Sucesso');
+            return Redirect::route('lista.categorias', ['id' => $id, 'categoria' => $categorias])->with('success', 'Classificação Excluída com Sucesso');
         } catch (PDOException $e){
-            return Redirect::route('lista.categorias', ['id' => $id, 'categoria' => $categorias])->with('error', 'Remova o(s) Livro(s) Vinculado(s) a Esta Categoria');
+            return Redirect::route('lista.categorias', ['id' => $id, 'categoria' => $categorias])->with('error', 'Remova o(s) Livro(s) Vinculado(s) a Esta Classificação');
         }
         
     }
