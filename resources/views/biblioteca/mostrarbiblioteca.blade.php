@@ -48,14 +48,10 @@
                             Acessar
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                {{-- <a href="{{ route('lista.autores', ['id' => $id])}}" class="dropdown-item">Autores</a> --}}
                                 <a href="{{ route('lista.alunos', ['id' => $id])}}" class="dropdown-item">Alunos</a>
-                            {{-- @if(count($locacao) >  0)   
-                                <a href="{{ route('lista.locacao', ['id' => $id])}}" class="dropdown-item">Locações</a>
-                            @endif --}}
                                 <a href="{{ route('lista.categorias', ['id' => $id])}}" class="dropdown-item">Classificação</a>
+                                <div class="dropdown-divider">Catalogação</div>
                                 <a href="{{ route('lista.livros', ['id' => $id])}}" class="dropdown-item">Catálogo de Livros</a>
-                                {{-- <a href="{{ route('lista.editoras', ['id' => $id])}}" class="dropdown-item">Editora</a> --}}
                                 <a href="{{ route('lista.autores', ['id' => $id])}}" class="dropdown-item">Autores</a>
                                 <a href="{{ route('lista.editoras', ['id' => $id])}}" class="dropdown-item">Editora</a>
                             </div>
@@ -69,11 +65,6 @@
                         <p>Código do Livro: <span>{{ $l->codigoLivro }}</span></p>
                         <p>Titulo: <span>{{ $l->titulo }}</span></p>
                         <p>Autor: <span>{{ $l->nome_autor }}</span></p>
-                        {{-- <p>Status: <span 
-                            @if ($l->status_atual == 'Disponível') class="text-success" @endif
-                            @if ($l->status_atual == 'Indisponível') class="text-danger" @endif>
-                            {{ $l->status_atual }}
-                        </span></p>   --}}
                         <p>N° de Cópias:<span> {{$l->numeroCopias}}</span>
                             <a href="{{ route('lista.copias', ['id' => $id, 'livros' => $l->id])}}" class="btn-form btn-sm ml-2">Cópias</a>
                         </p>
@@ -85,17 +76,6 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <a href="{{ route('visualizar.livro', ['id' => $id, 'livros' => $l->id])}}" class="dropdown-item">Ver Mais</a>
-                                {{-- @if($l->status_atual == 'Disponível')
-                                    <a href="{{route ('nova.locacao',['id' => $id, 'livro' => $l->id])}}" class="dropdown-item">Locar Livro</a>
-                                @elseif($l->status_atual == 'Indisponível')
-                                    <a href="{{route ('devolver.locacao', ['id' => $id, 'livro' => $l->id])}}"
-                                        onclick="event.preventDefault();
-                                        document.getElementById('devolver-form').submit();" class="dropdown-item">Devolver Livro
-                                    </a>
-                                    <form id="devolver-form" action="{{ route ('devolver.locacao', ['id' => $id, 'livro' => $l->id])}}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                @endif --}}
                                 <a href="{{ route('editar.livro', ['id' => $id, 'livros' => $l->id])}}" class="dropdown-item">Editar</a>
                                 <a href="{{ route('apagar.livro', ['id' => $id, 'livros' => $l->id])}}" onclick="return confirm('Deseja Excluir este Livro?')" class="dropdown-item">Apagar</a>
                             </div>
