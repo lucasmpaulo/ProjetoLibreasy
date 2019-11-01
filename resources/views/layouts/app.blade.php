@@ -31,6 +31,7 @@
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <a class="navbar-brand" href="{{ route('sobre')}}">Sobre</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <div class="navbar-custom">
                         <i class="fas fa-bars"></i>
@@ -84,7 +85,7 @@
 <footer>
     <div class="container">
         <div class="copy">
-            <p>Libreasy &copy; - 2019. Alguns direitos reservados </p>
+            <p>Libreasy &copy; - 2019. Todos os direitos reservados </p> 
         </div>
     </div>
     

@@ -43,7 +43,9 @@
                                 </span>
                             </div>  
                         </form>  
-                                            
+                    </div>
+                </div>
+                    
                 <div class="container ">
                     <div class="row justify-content-center mb-3">
                     @foreach($livros as $l)
@@ -53,15 +55,9 @@
                             <p>Código do Livro: <span>{{ $l->codigoLivro }}</span></p>
                             <p>Titulo: <span>{{ $l->titulo }}</span></p>
                             <p>Classificação: <span>{{ $l->categoria->nome }}</span></p>
-                            {{-- <p>Status: <span 
-                                @if ($l->status->status_atual == 'Disponível') class="text-success" @endif
-                                @if ($l->status->status_atual == 'Indisponível') class="text-danger" @endif>
-                                {{ $l->status->status_atual }}
-                            </span></p>      --}}
                             <p>N° de Cópias:<span> {{$l->numeroCopias}}</span>
                                 <a href="{{ route('lista.copias', ['id' => $id, 'livros' => $l->id])}}" class="btn-form btn-sm ml-2">Cópias</a>
                             </p>
-
                             @if((Auth::user()->id) == $verify)
                             <div class="text-right  align-middle m-t-md">
                                 <button class="btn btn-form btn-align mb-3 dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

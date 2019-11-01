@@ -29,5 +29,8 @@ class HomeController extends Controller
         // $lista = Biblioteca::where('id', $id)->paginate(3);
         return view('home', compact('bibliotecas'));
     }
+    public function sobre() {
+        return view('sobre', compact('bibliotecas', 'autores'));
+    }
     
 }
