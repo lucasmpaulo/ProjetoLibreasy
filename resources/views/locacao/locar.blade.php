@@ -51,6 +51,18 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <div class="form-group row">
+                                <label for="data_devolucao" class="col-md-4 col-form-label text-md-right">{{ __('Data da Devolução') }}</label>
+                                <div class="col-md-4">
+                                    <input id="data_devolucao" type="date" class="form-control @error('data_devolucao') is-invalid @enderror" name="data_devolucao" value="{{ old('data_devolucao') }}" required autocomplete="data_devolucao" autofocus>
+                                    @error('data_devolucao')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                 
                         <div class="form-group row mb-0">
                             <div class="col-md-12 text-right">

@@ -31,13 +31,13 @@
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a class="navbar-brand" href="{{ route('sobre')}}">Sobre</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <div class="navbar-custom">
                         <i class="fas fa-bars"></i>
                     </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                   
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     </ul>
@@ -63,6 +63,7 @@
                                         <a class="dropdown-item" href="/home">Página Principal</a>
                                     @endif
                                     <a class="dropdown-item" href="{{route('editar.perfil', ['id' => Auth::user()->id])}}">Editar Perfil</a>
+                                    <a class="dropdown-item" href="{{ route('ajuda')}}">Ajuda</a>  
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -85,7 +86,7 @@
 <footer>
     <div class="container">
         <div class="copy">
-            <p>Libreasy &copy; - 2019. Todos os direitos reservados </p> 
+            <p>Libreasy &copy; - 2019. Todos os direitos reservados.</p> 
         </div>
     </div>
     

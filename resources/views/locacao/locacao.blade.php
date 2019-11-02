@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="tabela-custom pb-4 fonte-form">
                 <div class="divisor-cabecalho header-custom text-center">
-                    <h3 class="text-center mt-4 p-t-md">Locar</h3>
+                    <h3 class="text-center mt-4 p-t-md">Emprestar</h3>
                 </div>
 
                 <div class="col-md-12">

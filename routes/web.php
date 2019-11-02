@@ -10,7 +10,7 @@ Auth::routes();
 
 // Rotas de Home
 Route::get('/home', 'HomeController@indexView')->name('home');
-Route::get('/sobre', 'HomeController@sobre')->name('sobre');
+Route::get('/ajuda', 'HomeController@ajuda')->name('ajuda');
 
 // Atualizar Perfil
 Route::prefix('/perfil')->group(function(){

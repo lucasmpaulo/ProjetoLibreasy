@@ -55,7 +55,7 @@
                             <p>Código do Livro: <span>{{ $l->codigoLivro }}</span></p>
                             <p>Titulo: <span>{{ $l->titulo }}</span></p>
                             <p>Classificação: <span>{{ $l->categoria->nome }}</span></p>
-                            <p>N° de Cópias:<span> {{$l->numeroCopias}}</span>
+                            <p>N° de Exemplares:<span> {{$l->numeroCopias}}</span>
                                 <a href="{{ route('lista.copias', ['id' => $id, 'livros' => $l->id])}}" class="btn-form btn-sm ml-2">Cópias</a>
                             </p>
                             @if((Auth::user()->id) == $verify)

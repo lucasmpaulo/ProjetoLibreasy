@@ -25,7 +25,7 @@
                                             @if ($lista->status->status_atual == 'Disponível') class="text-success" @endif
                                             @if ($lista->status->status_atual == 'Indisponível') class="text-danger" @endif>{{ $lista->status->status_atual }}
                                         </span> --}}
-                                N° de Cópias:<span> {{$lista->numeroCopias}}</span>
+                                N° de Exemplares:<span> {{$lista->numeroCopias}}</span>
                                 <a href="{{ route('lista.copias', ['id' => $id, 'livros' => $lista->id])}}" class="btn-form btn-sm ml-2">Cópias</a>
                             </p>  
                             {{-- <p>Status: <span 

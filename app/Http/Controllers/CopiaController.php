@@ -57,7 +57,7 @@ class CopiaController extends Controller
             $livros = Livro::find($livro->id);
             $copias->livro->update(['numeroCopias' => $copias->livro->numeroCopias+1]);
             $copias->save();
-            return Redirect::route('lista.livros', array('id' =>$id))->with('success','Cópia Inserida com Sucesso');      
+            return Redirect::route('lista.copias', array('id' =>$id, 'livro' => $livro->id))->with('success','Cópia Inserida com Sucesso');  
         } else {
             $copias->codigoCopia = $result;
             $copias->livro_id = $livro->id;

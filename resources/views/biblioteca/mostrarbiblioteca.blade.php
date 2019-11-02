@@ -6,7 +6,7 @@
         <div class="col-sm-12 mb-4">        
             <div class="tabela-custom pb-3 fonte-form"  style="min-height:15em;">
                 <div class="header-custom m-t-md">
-                    <h3 class="text-center p-t-md">Recursos da Biblioteca</h3>
+                    <h3 class="text-center p-t-md">Catálogo</h3>
                 </div>
                 @auth
 
@@ -65,7 +65,7 @@
                         <p>Código do Livro: <span>{{ $l->codigoLivro }}</span></p>
                         <p>Titulo: <span>{{ $l->titulo }}</span></p>
                         <p>Autor: <span>{{ $l->nome_autor }}</span></p>
-                        <p>N° de Cópias:<span> {{$l->numeroCopias}}</span>
+                        <p>N° de Exemplares:<span> {{$l->numeroCopias}}</span>
                             <a href="{{ route('lista.copias', ['id' => $id, 'livros' => $l->id])}}" class="btn-form btn-sm ml-2">Cópias</a>
                         </p>
                         <p>Classificação: <span>{{ $l->nome }}</span></p>

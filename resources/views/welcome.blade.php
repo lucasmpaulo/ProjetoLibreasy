@@ -43,8 +43,8 @@
         <div class="row">
             <div class="col-md-12 ">
                 <div class="introducao">
-                    <h1 class="mb-4">Sistema Desenvolvido Para Auxiliar o Controle de Bibliotecas de Pequeno Porte ou Pessoais</h1>
-                    <a class="btn-custom" href="{{ route('register') }}">Inscreva-se</a>
+                    <h1 class="mb-4">Sistema Desenvolvido Para Auxiliar o Controle de Bibliotecas</h1>
+                    <a style="text-transform:none;" class="btn-custom" href="{{ route('register') }}">Inscreva-se</a>
                 </div>
             </div> 
         </div>

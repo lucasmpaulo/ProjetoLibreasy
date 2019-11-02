@@ -61,8 +61,9 @@ class LivroController extends Controller
         return redirect('home');
     }
 
-    public function criar(LivroRequest $request, $id) {
+    public function criar(LivroRequest $request, $id, Copia $copia) {
         $livro = new Livro();
+        $copias = new Copia();
         $user = auth()->user();
         $result = rand(100000, 999999);
         $subt = rand(0, 99);
@@ -80,11 +81,30 @@ class LivroController extends Controller
                 $livro->autor_id = $request->input('autor_id');
                 $livro->editora_id = $request->input('editora_id');
                 $livro->categoria_id = $request->input('categoria_id');
-                // $livro->status_id = 2;
                 $livro->biblioteca_id = $id;
                 $livro->user_id = $user->id;
-                
                 $livro->save();
+
+                $result2 = rand(100000, 999999);
+                $subt2 = rand(0, 99);
+                if($result == $copias->codigoCopia){
+                    $copias->codigoCopia = $result2 - $subt2;
+                    $copias->livro_id = $livro->id;
+                    $copias->biblioteca_id = $id;
+                    $copias->status_id = 1;
+                    $livros = Livro::find($livro->id);
+                    $copias->livro->update(['numeroCopias' => $copias->livro->numeroCopias+1]);
+                    $copias->save();      
+                } else {
+                    $copias->codigoCopia = $result2;
+                    $copias->livro_id = $livro->id;
+                    $copias->biblioteca_id = $id;
+                    $copias->status_id = 1;
+                    $livros = Livro::find($livro->id);
+                    $copias->livro->update(['numeroCopias' => $copias->livro->numeroCopias+1]);
+                    $copias->save();
+                }  
+
                 return Redirect::route('lista.livros', array('id' =>$id))->with('success','Livro Inserido com Sucesso');
             } else {
                 $livro->isbn = $request->input('isbn');
@@ -99,10 +119,29 @@ class LivroController extends Controller
                 $livro->autor_id = $request->input('autor_id');
                 $livro->editora_id = $request->input('editora_id');
                 $livro->categoria_id = $request->input('categoria_id');
-                // $livro->status_id = 2;
                 $livro->biblioteca_id = $id;
                 $livro->user_id = $user->id;
                 $livro->save();
+
+                $result2 = rand(100000, 999999);
+                $subt2 = rand(0, 99);
+                if($result == $copias->codigoCopia){
+                    $copias->codigoCopia = $result2 - $subt2;
+                    $copias->livro_id = $livro->id;
+                    $copias->biblioteca_id = $id;
+                    $copias->status_id = 1;
+                    $livros = Livro::find($livro->id);
+                    $copias->livro->update(['numeroCopias' => $copias->livro->numeroCopias+1]);
+                    $copias->save();      
+                } else {
+                    $copias->codigoCopia = $result2;
+                    $copias->livro_id = $livro->id;
+                    $copias->biblioteca_id = $id;
+                    $copias->status_id = 1;
+                    $livros = Livro::find($livro->id);
+                    $copias->livro->update(['numeroCopias' => $copias->livro->numeroCopias+1]);
+                    $copias->save();
+                }  
                 return Redirect::route('lista.livros', array('id' =>$id))->with('success','Livro Inserido com Sucesso');
             }
         } catch ( Exception $e) {

@@ -42,11 +42,11 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     {{-- <a href="{{ route('editar.copia', ['id' => $id, 'livros' => $c->livro->id, 'copia' => $c->id])}}" class="dropdown-item">Editar</a> --}}
                                     @if($c->status->id == 1)
-                                        <a href="{{route ('nova.locacao',['id' => $id, 'copia' => $c->id])}}" class="dropdown-item">Locar Cópia</a>
+                                        <a href="{{route ('nova.locacao',['id' => $id, 'copia' => $c->id])}}" class="dropdown-item">Emprestar </a>
                                     @elseif($c->status->id == 2)
                                         <a href="{{ route ('devolver.locacao', ['id' => $id, 'copia' => $c->id])}}"
                                             onclick="event.preventDefault(); document.getElementById('devolver-form').submit(); 
-                                            return confirm('Deseja Confirmar a Devolução?')" class="dropdown-item">Devolver Cópia
+                                            return confirm('Deseja Confirmar a Devolução?')" class="dropdown-item">Devolver
                                         </a>
                                     <form id="devolver-form" action="{{ route ('devolver.locacao', ['id' => $id, 'copia' => $c->id])}}" method="POST" style="display: none;">
                                         @csrf
